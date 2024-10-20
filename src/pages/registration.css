@@ -1,0 +1,28 @@
+
+.registration-container {
+    background-color: #e9d9c8;
+    color: #1d1d1d; 
+  }
+  
+  
+  .btn-custom {
+    background-color: #9f9685;
+    color: #1d1d1d;
+    border: none;
+  }
+  
+  
+  .text-link {
+    color: #1d1d1d;
+  }
+  
+  .text-link:hover {
+    text-decoration: underline;
+    color: #1d1d1d; 
+  }
+  
+ 
+  .form-control {
+    color: #1d1d1d;
+  }
+  

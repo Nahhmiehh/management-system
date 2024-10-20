@@ -9,7 +9,7 @@ const RegistrationForm = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vw-100">
       <form className="registration-container border p-4 rounded" style={{ width: '400px'}}>
-        <h2 className="text-center mb-4">Register</h2>
+        <h2 className="texta-center mb-4">Register</h2>
 
         <div className="form-group mb-3">
           <label htmlFor="name">Full Name</label>

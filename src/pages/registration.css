@@ -4,6 +4,9 @@
     color: #1d1d1d; 
   }
   
+  .full-height {
+    height: 100vh;
+}
   
   .btn-custom {
     background-color: #9f9685;

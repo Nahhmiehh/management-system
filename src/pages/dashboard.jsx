@@ -1,25 +1,57 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './dashboard.css';
 
 const Dashboard = () => {
   return (
-    <div className="d-flex">
-      <div className="bg-dark text-white p-3" style={{ width: '200px' }}>
-        <h4>Dashboard</h4>
-        <ul className="nav flex-column">
-          <li className="nav-item">
-            <Link to="/users" className="nav-link text-white">Users</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/products" className="nav-link text-white">Products</Link>
-          </li>
-        </ul>
+      <div className="dashboard-container d-flex vh-100 vw-100">
+          <nav className="sidebar border p-3">
+              <h2 className="text-center mb-4">Dashboard</h2>
+              <ul className="list-unstyled">
+                  <li className="mb-3">
+                      <Link to="/dashboard/users" className="sidebar-button">Users</Link>
+                  </li>
+                  <li>
+                      <Link to="/dashboard/products" className="sidebar-button">Products</Link>
+                  </li>
+              </ul>
+          </nav>
+
+          <main className="main-content flex-grow-1 p-4">
+              <header className="header mb-4">
+                  <h1 className="text-center">Welcome to the Dashboard</h1>
+              </header>
+
+              <div className="content">
+                  <div className="row">
+                      <div className="col-md-4 mb-4">
+                          <div className="card shadow-sm">
+                              <div className="card-body">
+                                  <h5 className="card-title">Total Users</h5>
+                                  <p className="card-text">0</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div className="col-md-4 mb-4">
+                          <div className="card shadow-sm">
+                              <div className="card-body">
+                                  <h5 className="card-title">Total Products</h5>
+                                  <p className="card-text">0</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div className="col-md-4 mb-4">
+                          <div className="card shadow-sm">
+                              <div className="card-body">
+                                  <h5 className="card-title">Pending Orders</h5>
+                                  <p className="card-text">0</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </main>
       </div>
-      <div className="p-4">
-        <h2>Welcome to the Dashboard</h2>
-      </div>
-    </div>
   );
 };
-
 export default Dashboard;

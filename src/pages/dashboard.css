@@ -1,0 +1,75 @@
+.dashboard-container {
+    height: 100vh; 
+    background-color: #ada192; 
+}
+
+.sidebar {
+    background-color: #ada192;
+    width: 300px; 
+}
+
+.sidebar h2 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #302a27;
+    font-size: 2.0rem; 
+    margin-bottom: 10px; 
+}
+
+.sidebar ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.sidebar ul li {
+    margin: 20px 0; 
+}
+
+.sidebar-button {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: block; 
+    padding: 10px 15px; 
+    font-size: 1.5rem;
+    color: #ddd8d5; 
+    text-decoration: none;
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+
+.sidebar-button:hover {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-decoration: none;
+    color: #ddd8d5;
+    background-color: #4e4b44;
+}
+
+.main-content {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #d6d0c8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header {
+    background-color: #ada192;
+    color: #302a27;
+    border-radius: 8px;
+    border-bottom: 1px solid #ada192;
+    margin-bottom: 30px; 
+}
+
+.card {
+    border-radius: 8px;
+    color: #302a27;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #302a27;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    color: #302a27;
+}

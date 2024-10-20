@@ -34,12 +34,12 @@ const Registration = () => {
                 <h2 className="text-center mb-4">Register</h2>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="name">Full Name</label>
+                    <label htmlFor="name">Full Name: </label>
                     <input
                         type="text"
                         className="form-control"
                         id="fullName"
-                        placeholder="Enter your full name"
+                        placeholder="Enter your Full Name"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         required
@@ -47,12 +47,12 @@ const Registration = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Username: </label>
                     <input
                         type="text"
                         className="form-control"
                         id="username"
-                        placeholder="Enter your username"
+                        placeholder="Enter your Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
@@ -60,12 +60,12 @@ const Registration = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password: </label>
                     <input
                         type="password"
                         className="form-control"
                         id="password"
-                        placeholder="Password"
+                        placeholder="Enter your Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -73,12 +73,12 @@ const Registration = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <label htmlFor="confirmPassword">Confirm Password: </label>
                     <input
                         type="password"
                         className="form-control"
                         id="confirmPassword"
-                        placeholder="Confirm your password"
+                        placeholder="Confirm your Password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required

@@ -12,7 +12,7 @@ const Dashboard = () => {
                       <Link to="/dashboard/users" className="sidebar-button">Users</Link>
                   </li>
                   <li>
-                      <Link to="/add-product" className="sidebar-button">Products</Link>
+                      <Link to="/products" className="sidebar-button">Products</Link>
                   </li>
               </ul>
           </nav>

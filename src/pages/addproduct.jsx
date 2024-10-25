@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { addProduct } from '../api/api'; 
+import './addproduct.css';
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -49,9 +50,9 @@ const AddProduct = () => {
     <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
     <div style={{ padding: '20px', fontFamily: 'Comic Sans MS', backgroundColor: '#e9d9c8' }}>
       <h2>Add New Product</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="product-container border p-4 rounded" style={{ width: '400px' }} onSubmit={handleSubmit}>
         <div>
-          <label>Product Code</label>
+          <label>Product Code: </label>
           <input
             type="text"
             name="product_code"
@@ -61,7 +62,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Name</label>
+          <label>Name: </label>
           <input
             type="text"
             name="name"
@@ -71,7 +72,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Description</label>
+          <label>Description: </label>
           <input
             type="text"
             name="description"
@@ -81,7 +82,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Price</label>
+          <label>Price: </label>
           <input
             type="number"
             step="0.01"
@@ -92,7 +93,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Quantity</label>
+          <label>Quantity: </label>
           <input
             type="number"
             name="qty"
@@ -102,7 +103,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Date Added</label>
+          <label>Date Added: </label>
           <input
             type="date"
             name="date_added"

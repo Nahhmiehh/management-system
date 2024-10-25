@@ -19,7 +19,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addProduct(formData);  // Call the API to save the product
+      await addProduct(formData);
       alert('Product added successfully!');
       setFormData({
         product_code: '',

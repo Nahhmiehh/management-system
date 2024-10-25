@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getProduct, updateProduct } from '../api/api'; // Assume getProduct is a function to fetch product by ID
+import { getProduct, updateProduct } from '../api/api';
 import { useParams, useNavigate } from 'react-router-dom';
 
 export const EditProduct = () => {
@@ -18,8 +18,8 @@ export const EditProduct = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await getProduct(id); // Fetch product by ID
-                setFormData(response.data); // Set form data with fetched product details
+                const response = await getProduct(id); 
+                setFormData(response.data); 
             } catch (error) {
                 console.error('Error fetching product:', error);
             }
@@ -35,9 +35,9 @@ export const EditProduct = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await updateProduct(id, formData); // Update the product
+            await updateProduct(id, formData);
             alert('Product updated successfully!');
-            navigate('/products'); // Redirect to the product list page after success
+            navigate('/products'); 
         } catch (error) {
             console.error('Error updating product:', error);
             alert('Error updating product');
@@ -49,7 +49,6 @@ export const EditProduct = () => {
             <div style={{ padding: '20px', backgroundColor: '#e9d9c8' }}>
                 <h2>Edit Product</h2>
                 <form className="product-container border p-4 rounded" style={{ width: '400px' }} onSubmit={handleSubmit}>
-                    {/* Similar form fields as AddProduct, but populated with product details */}
                     <div>
                         <label>Product Code: </label>
                         <input
@@ -70,7 +69,47 @@ export const EditProduct = () => {
                             required
                         />
                     </div>
-                    {/* Other fields for description, price, qty, and date_added */}
+                    <div>
+                        <label>Description: </label>
+                        <input
+                            type="text"
+                            name="description"
+                            value={formData.description}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Price: </label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="price"
+                            value={formData.price}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Quantity: </label>
+                        <input
+                            type="number"
+                            name="qty"
+                            value={formData.qty}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Date Added: </label>
+                        <input
+                            type="date"
+                            name="date_added"
+                            value={formData.date_added}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <button type="submit">Update</button>
                 </form>
             </div>

@@ -1,4 +1,3 @@
-// src/api.js
 import axios from 'axios';
 
 // API base URL

@@ -1,114 +1,123 @@
 import React, { useState } from 'react';
+import { addProduct } from '../api/api'; 
 
-function AddProduct() {
-  const [product, setProduct] = useState({
-    productCode: '',
+const AddProduct = () => {
+  const [formData, setFormData] = useState({
+    product_code: '',
     name: '',
     description: '',
     price: '',
-    quantity: '',
-    dateAdded: '',
+    qty: '',
+    date_added: '',
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await addProduct(formData);  // Call the API to save the product
+      alert('Product added successfully!');
+      setFormData({
+        product_code: '',
+        name: '',
+        description: '',
+        price: '',
+        qty: '',
+        date_added: '',
+      });
+    } catch (error) {
+      console.error('Error adding product:', error);
+      alert('Error adding product');
+    }
   };
 
   const handleClear = () => {
-    setProduct({
-      productCode: '',
+    setFormData({
+      product_code: '',
       name: '',
       description: '',
       price: '',
-      quantity: '',
-      dateAdded: '',
+      qty: '',
+      date_added: '',
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Product saved', product); // This will later be replaced by API call
-    alert('Product saved successfully!');
-    handleClear();
-  };
-
   return (
-    <div className="container mt-5">
+    <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
+    <div style={{ padding: '20px', fontFamily: 'Comic Sans MS', backgroundColor: '#e9d9c8' }}>
       <h2>Add New Product</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group mb-3">
+        <div>
           <label>Product Code</label>
           <input
             type="text"
-            name="productCode"
-            className="form-control"
-            value={product.productCode}
+            name="product_code"
+            value={formData.product_code}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group mb-3">
+        <div>
           <label>Name</label>
           <input
             type="text"
             name="name"
-            className="form-control"
-            value={product.name}
+            value={formData.name}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group mb-3">
+        <div>
           <label>Description</label>
           <input
             type="text"
             name="description"
-            className="form-control"
-            value={product.description}
+            value={formData.description}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group mb-3">
+        <div>
           <label>Price</label>
           <input
             type="number"
             step="0.01"
             name="price"
-            className="form-control"
-            value={product.price}
+            value={formData.price}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group mb-3">
+        <div>
           <label>Quantity</label>
           <input
             type="number"
-            name="quantity"
-            className="form-control"
-            value={product.quantity}
+            name="qty"
+            value={formData.qty}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group mb-3">
+        <div>
           <label>Date Added</label>
           <input
             type="date"
-            name="dateAdded"
-            className="form-control"
-            value={product.dateAdded}
+            name="date_added"
+            value={formData.date_added}
             onChange={handleChange}
             required
           />
         </div>
-        <button type="submit" className="btn btn-success">Save</button>
-        <button type="button" className="btn btn-secondary ml-3" onClick={handleClear}>Clear</button>
+
+        <button type="submit">Save</button>
+        <button type="button" onClick={handleClear}>Clear</button>
       </form>
     </div>
+    </div>
   );
-}
+};
 
 export default AddProduct;

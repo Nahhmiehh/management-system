@@ -12,7 +12,7 @@ const Dashboard = () => {
                       <Link to="/dashboard/users" className="sidebar-button">Users</Link>
                   </li>
                   <li>
-                      <Link to="/dashboard/products" className="sidebar-button">Products</Link>
+                      <Link to="/add-product" className="sidebar-button">Products</Link>
                   </li>
               </ul>
           </nav>
@@ -21,35 +21,6 @@ const Dashboard = () => {
               <header className="header mb-4">
                   <h1 className="text-center">Welcome to the Dashboard</h1>
               </header>
-
-              <div className="content">
-                  <div className="row">
-                      <div className="col-md-4 mb-4">
-                          <div className="card shadow-sm">
-                              <div className="card-body">
-                                  <h5 className="card-title">Total Users</h5>
-                                  <p className="card-text">0</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="col-md-4 mb-4">
-                          <div className="card shadow-sm">
-                              <div className="card-body">
-                                  <h5 className="card-title">Total Products</h5>
-                                  <p className="card-text">0</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="col-md-4 mb-4">
-                          <div className="card shadow-sm">
-                              <div className="card-body">
-                                  <h5 className="card-title">Pending Orders</h5>
-                                  <p className="card-text">0</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
           </main>
       </div>
   );

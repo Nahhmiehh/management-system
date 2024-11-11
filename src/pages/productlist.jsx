@@ -43,60 +43,64 @@ export const ProductList = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh100 vw-100">
-    <div className="product-list-container">
-      <h1>Product List</h1>
+    <div className="product-list-fullpage">
+      <div className="product-list-container">
+        <h1>Product List</h1>
 
-      <Link to="/add-product" className="btn btn-primary mb-3">
-        Add Product
-      </Link>
+        <Link to="/dashboard" className="btn btn-primary mb-3 ms-2">
+          Back to Dashboard
+        </Link>
 
-      {loading ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <div className="text-danger">{error}</div>
-      ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Product Code</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Date Added</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.length === 0 ? (
+        <Link to="/add-product" className="btn btn-primary mb-3 ms-2">
+          Add Product
+        </Link>
+
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div className="text-danger">{error}</div>
+        ) : (
+          <table className="table">
+            <thead>
               <tr>
-                <td colSpan="7" className="text-center">No products found.</td>
+                <th>Product Code</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Date Added</th>
+                <th>Actions</th>
               </tr>
-            ) : (
-              products.map((product) => (
-                <tr key={product._id}>
-                  <td>{product.product_code}</td>
-                  <td>{product.name}</td>
-                  <td>{product.description}</td>
-                  <td>{product.price}</td>
-                  <td>{product.qty}</td>
-                  <td>{formatDate(product.date_added)}</td>
-                  <td>
-                    <Link to={`/edit-product/${product._id}`} className="btn btn-warning me-2">Edit</Link>
-                    <button 
-                      onClick={() => handleDelete(product._id)} 
-                      className="btn btn-danger">
-                      Delete
-                    </button>
-                  </td>
+            </thead>
+            <tbody>
+              {products.length === 0 ? (
+                <tr>
+                  <td colSpan="7" className="text-center">No products found.</td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      )}
-    </div>
+              ) : (
+                products.map((product) => (
+                  <tr key={product._id}>
+                    <td>{product.product_code}</td>
+                    <td>{product.name}</td>
+                    <td>{product.description}</td>
+                    <td>{product.price}</td>
+                    <td>{product.qty}</td>
+                    <td>{formatDate(product.date_added)}</td>
+                    <td>
+                      <Link to={`/edit-product/${product._id}`} className="btn btn-warning me-2">Edit</Link>
+                      <button 
+                        onClick={() => handleDelete(product._id)} 
+                        className="btn btn-danger">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 };

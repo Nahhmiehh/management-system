@@ -12,15 +12,22 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:4000/api/login', { username, password });
+
+            // Check if login is successful
             if (response.status === 200) {
+                // Store the user data in localStorage
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+
+                // Navigate to the dashboard
                 navigate('/dashboard');
             }
         } catch (error) {
             alert('Invalid credentials');
         }
     };
+
     return (
-        <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
+        <div className="loginpage d-flex justify-content-center align-items-center vh-100 vw-100">
             <form className="login-container border p-4 rounded" style={{ width: '400px' }} onSubmit={handleSubmit}>
                 <h2 className="text-center mb-4">Login</h2>
 

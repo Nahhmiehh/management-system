@@ -1,3 +1,14 @@
+.product-list-fullpage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #e9d9c8;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .product-list-container {
     width:100%;
     margin: 0 auto;
@@ -10,7 +21,6 @@
   h1 {
     text-align: left;
     color: #4a3b29;
-    font-family: 'Arial', sans-serif;
     margin-bottom: 20px;
   }
   
@@ -44,7 +54,6 @@
     padding: 12px;
     border: 1px solid #d3c0a5;
     text-align: left;
-    font-family: 'Courier New', Courier, monospace;
   }
   
   .table th {

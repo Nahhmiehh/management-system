@@ -1,4 +1,7 @@
-
+.registerpage {
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
 .registration-container {
     background-color: #e9d9c8;
     color: #1d1d1d; 

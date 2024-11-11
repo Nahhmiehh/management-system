@@ -29,7 +29,7 @@ const Registration = () => {
     };
 
     return (
-        <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
+        <div className="registerpage d-flex justify-content-center align-items-center vh-100 vw-100">
             <form className="registration-container border p-4 rounded" style={{ width: '400px' }} onSubmit={handleSubmit}>
                 <h2 className="text-center mb-4">Register</h2>
 

@@ -4,7 +4,7 @@ import './dashboard.css';
 
 const Dashboard = () => {
   // Retrieve the user data from localStorage
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('User'));
 
   return (
     <div className="dashboard-container d-flex vh-100 vw-100">
@@ -19,15 +19,15 @@ const Dashboard = () => {
           </li>
         </ul>
 
-        {/* Profile Section */}
-        <div className="profile-section mt-auto">
-          <div className="profile-info d-flex align-items-center">
-            <img src="https://via.placeholder.com/50" alt="Profile" className="profile-pic" />
-            <div className="ml-3">
-              <h5>{user ? user.fullName : 'Guest'}</h5>
-              <p>{user ? user.email : 'No email available'}</p>
+        <div className="profile-section">
+          <Link to="/profile" className="profile-link">
+            <div className="profile-info d-flex align-items-center">
+              <img src="https://via.placeholder.com/50" alt="Profile" className="profile-pic" />
+              <div className="ml-3">
+                <h5>{user ? user.fullName : 'User'}</h5>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </nav>
 

@@ -45,13 +45,12 @@
     background-color: #4e4b44;
 }
 
-/* Profile Section at the Bottom of Sidebar */
 .profile-section {
-    margin-top: auto; /* Pushes the profile to the bottom */
+    margin-top: auto;
     text-align: center;
     padding: 15px;
-    background-color: #e9d9c8; /* Lighter background for the profile section */
-    border-radius: 8px;
+    background-color: #e9d9c8;
+    border-radius: 8px; 
 }
 
 .profile-info {

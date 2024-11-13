@@ -13,10 +13,9 @@ const Login = () => {
         try {
             const response = await axios.post('http://localhost:4000/api/login', { username, password });
 
-            // Check if login is successful
             if (response.status === 200) {
-                // Store the user data in localStorage
-                localStorage.setItem('user', JSON.stringify(response.data.user));
+                // Store the user ID in localStorage
+                localStorage.setItem('userId', response.data.user._id);
 
                 // Navigate to the dashboard
                 navigate('/dashboard');

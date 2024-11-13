@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './dashboard.css';
 
 const Dashboard = () => {
-  // Retrieve the user data from localStorage
   const user = JSON.parse(localStorage.getItem('User'));
 
   return (

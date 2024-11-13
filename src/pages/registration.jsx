@@ -17,14 +17,14 @@ const Registration = () => {
         }
 
         try {
-            await axios.post('http://localhost:4000/api/registration', { username, password });
+            await axios.post('http://localhost:4000/api/registration', { fullName, username, password });
             alert('Registration successful!');
             setFullName('');
             setUsername('');
             setPassword('');
             setConfirmPassword('');
         } catch (error) {
-            alert('Registration failed: ' + error.response.data.message);
+            alert('Registration failed: ' + (error.response?.data?.message || 'Server error'));
         }
     };
 
@@ -34,7 +34,7 @@ const Registration = () => {
                 <h2 className="text-center mb-4">Register</h2>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="name">Full Name: </label>
+                    <label htmlFor="fullName">Full Name: </label>
                     <input
                         type="text"
                         className="form-control"
@@ -93,4 +93,5 @@ const Registration = () => {
         </div>
     );
 };
+
 export default Registration;
